@@ -6,4 +6,5 @@ COPY /target/onlinebookstore-0.0.1-SNAPSHOT.war /app/
 
 EXPOSE 3000
 
-java -jar onlinebookstore-0.0.1-SNAPSHOT.war
+ENTRYPOINT [ "java" , "-jar" , "/target/onlinebookstore-0.0.1-SNAPSHOT.war" ]
+# java -jar onlinebookstore-0.0.1-SNAPSHOT.war
