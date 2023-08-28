@@ -31,7 +31,7 @@ pipeline {
         }
         stage('build docker image'){
             steps{
-\               sh 'sudo docker build -t amardeepgurjar:latest'
+               sh 'sudo docker build -t amardeepgurjar:latest'
             }
         }
         // stage('push docker image'){
