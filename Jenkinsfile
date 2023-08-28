@@ -31,7 +31,9 @@ pipeline {
         }
         stage('build docker image'){
             steps{
-               sh 'sudo docker build -t amardeepgurjar:latest'
+                script{ 
+                    docker_image = docker.build "${IMAGE_NAME}" 
+                }
             }
         }
         // stage('push docker image'){
