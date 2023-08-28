@@ -1,10 +1,8 @@
-FROM openjdk:11-jre-slim
+FROM tomcat:9.0
 
-WORKDIR /app
-
-COPY /target/onlinebookstore-0.0.1-SNAPSHOT.war /app/
+COPY /target/onlinebookstore-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps/
 
 EXPOSE 8080
 
-ENTRYPOINT [ "java" , "-jar" , "/target/onlinebookstore-0.0.1-SNAPSHOT.war" ]
+ENTRYPOINT ["catalina.sh", "run"]
 # java -jar onlinebookstore-0.0.1-SNAPSHOT.war
