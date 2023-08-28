@@ -36,20 +36,20 @@ pipeline {
                 }
             }
         }
-        // stage('push docker image'){
-        //     steps{
-        //         script{
-        //             docker.withRegistry('',REGISTRY_CREDS){
-        //                 docker_image.push("$BUILD_NUMBER")
-        //                 docker_image.push('latest')
-        //             }
-        //         }
-        //     }
-        // }
-        // stage('deploying the image on vm'){
-        //     steps{
-        //         sh 'docker run -d -p 3000:8080 amardeepgurjar/onlinebookstore:latest'
-        //     }
-        // }
+        stage('push docker image'){
+            steps{
+                script{
+                    docker.withRegistry('',REGISTRY_CREDS){
+                        docker_image.push("$BUILD_NUMBER")
+                        docker_image.push('latest')
+                    }
+                }
+            }
+        }
+        stage('deploying the image on vm'){
+            steps{
+                sh 'docker run -d -p 3000:8080 amardeepgurjar/onlinebookstore:latest'
+            }
+        }
     }
 }
