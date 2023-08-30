@@ -26,7 +26,6 @@ pipeline {
         }
         stage('build package of application'){
             steps{
-                tool name: 'MAVEN_HOME', type: 'hudson.tasks.Maven'
                 sh 'mvn clean install'
             }
         }
